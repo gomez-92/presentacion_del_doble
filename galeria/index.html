@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El doble y el cuerpo — Galería</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wall:#ffffff;
+    --wall-deep:#f3f3f3;
+    --ink:#23262b;
+    --ink-soft:#5a5c57;
+    --line:#e2e2e2;
+    --accent:#b23a2c;
+    --azul:#3d5a80;
+    --oliva:#6b6b2e;
+    --frame:#23262b;
+    --serif:"Libre Caslon Text", Georgia, "Times New Roman", serif;
+    --text:"Lora", Georgia, serif;
+    --sans:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--wall);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+    padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    /* textura sutil de pared */
+
+  }
+
+  /* ---------- Encabezado ---------- */
+  header.hall{
+    text-align:center;
+    padding:clamp(56px,12vh,120px) 24px clamp(40px,8vh,80px);
+    max-width:860px;margin:0 auto;
+  }
+  .eyebrow{
+    font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  header.hall h1{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(28px,4.8vw,50px);line-height:1.18;letter-spacing:-.01em;
+    margin:18px 0 16px;letter-spacing:-.01em;
+  }
+  header.hall h1 em{font-style:italic;color:var(--accent)}
+  header.hall p.sub{
+    font-family:var(--sans);font-size:clamp(15px,2vw,18px);color:var(--ink-soft);
+  }
+  .rule{width:48px;height:1px;background:var(--ink);opacity:.35;margin:28px auto 0}
+  .index{
+    display:flex;justify-content:center;gap:clamp(18px,4vw,40px);flex-wrap:wrap;
+    margin-top:28px;list-style:none;
+  }
+  .index a{
+    color:var(--ink);text-decoration:none;font-family:var(--serif);font-size:18px;
+    border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s;
+  }
+  .index a:hover{border-color:var(--ink)}
+  .index span{font-family:var(--sans);font-size:11px;letter-spacing:.2em;color:var(--ink-soft);margin-right:8px}
+
+  /* ---------- Sala ---------- */
+  section.sala{
+    border-top:1px solid var(--line);
+    padding:clamp(40px,7vh,72px) clamp(18px,4vw,56px);
+    scroll-margin-top:0;
+  }
+  .sala-num{
+    font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);
+    text-align:center;margin-bottom:clamp(24px,4vh,40px);
+  }
+  .sala-inner{
+    max-width:1320px;margin:0 auto;
+    display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,40px);
+  }
+
+  /* fondos por sala */
+  #horla{background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22280%22 viewBox=%220 0 280 280%22%3E%3Cg fill=%22none%22 stroke=%22%2323262b%22 stroke-opacity=%22.08%22 stroke-width=%221.4%22 stroke-linejoin=%22round%22 stroke-linecap=%22round%22%3E%3Cg transform=%22translate(30 34) rotate(-12)%22%3E%3Crect x=%220%22 y=%220%22 width=%2226%22 height=%2236%22 rx=%222%22/%3E%3Cpath d=%22M5 0v36M10 9h11M10 13h8%22/%3E%3C/g%3E%3Cg transform=%22translate(150 22) rotate(8)%22%3E%3Cpath d=%22M0 6c10-5 20-5 28 0v26c-8-5-18-5-28 0z%22/%3E%3Cpath d=%22M28 6c8-5 18-5 28 0v26c-10-5-20-5-28 0z%22/%3E%3Cpath d=%22M6 12h14M6 16h12M34 12h14M34 16h12%22/%3E%3C/g%3E%3Cg transform=%22translate(222 120) rotate(-6)%22%3E%3Crect x=%220%22 y=%220%22 width=%2234%22 height=%229%22 rx=%221.5%22/%3E%3Crect x=%223%22 y=%22-9%22 width=%2230%22 height=%229%22 rx=%221.5%22/%3E%3Crect x=%22-2%22 y=%22-18%22 width=%2232%22 height=%229%22 rx=%221.5%22/%3E%3Cpath d=%22M6 0v9M9 -9v9M4 -18v9%22/%3E%3C/g%3E%3Cg transform=%22translate(92 120) rotate(14)%22%3E%3Crect x=%220%22 y=%220%22 width=%2222%22 height=%2230%22 rx=%222%22/%3E%3Cpath d=%22M4 0v30M8 8h9%22/%3E%3C/g%3E%3Cg transform=%22translate(26 196) rotate(4)%22%3E%3Cpath d=%22M0 6c9-4 17-4 24 0v22c-7-4-15-4-24 0z%22/%3E%3Cpath d=%22M24 6c7-4 15-4 24 0v22c-9-4-17-4-24 0z%22/%3E%3C/g%3E%3Cg transform=%22translate(170 214) rotate(-18)%22%3E%3Crect x=%220%22 y=%220%22 width=%2228%22 height=%2238%22 rx=%222%22/%3E%3Cpath d=%22M5 0v38M10 10h12M10 14h9M10 18h10%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");background-size:280px 280px}
+  #fridas{background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22280%22 viewBox=%220 0 280 280%22%3E%3Cg fill=%22none%22 stroke=%22%2323262b%22 stroke-opacity=%22.08%22 stroke-width=%221.4%22 stroke-linejoin=%22round%22 stroke-linecap=%22round%22%3E%3Cg transform=%22translate(28 30) rotate(-6)%22%3E%3Crect x=%220%22 y=%220%22 width=%2240%22 height=%2248%22/%3E%3Crect x=%225%22 y=%225%22 width=%2230%22 height=%2238%22/%3E%3Cpath d=%22M5 34l9-9 7 6 6-5 8 8%22/%3E%3Ccircle cx=%2225%22 cy=%2215%22 r=%223%22/%3E%3C/g%3E%3Cg transform=%22translate(150 26) rotate(5)%22%3E%3Crect x=%220%22 y=%220%22 width=%2256%22 height=%2240%22/%3E%3Crect x=%225%22 y=%225%22 width=%2246%22 height=%2230%22/%3E%3Cpath d=%22M5 30l12-10 9 7 10-9 15 12%22/%3E%3C/g%3E%3Cg transform=%22translate(224 128) rotate(-4)%22%3E%3Cellipse cx=%2218%22 cy=%2223%22 rx=%2218%22 ry=%2223%22/%3E%3Cellipse cx=%2218%22 cy=%2223%22 rx=%2213%22 ry=%2218%22/%3E%3Ccircle cx=%2218%22 cy=%2219%22 r=%225%22/%3E%3Cpath d=%22M8 37c3-7 17-7 20 0%22/%3E%3C/g%3E%3Cg transform=%22translate(88 124) rotate(10)%22%3E%3Crect x=%220%22 y=%220%22 width=%2236%22 height=%2236%22/%3E%3Crect x=%224%22 y=%224%22 width=%2228%22 height=%2228%22/%3E%3Crect x=%228%22 y=%228%22 width=%2220%22 height=%2220%22/%3E%3C/g%3E%3Cg transform=%22translate(24 200) rotate(3)%22%3E%3Crect x=%220%22 y=%220%22 width=%2248%22 height=%2236%22/%3E%3Crect x=%225%22 y=%225%22 width=%2238%22 height=%2226%22/%3E%3Cpath d=%22M5 26l10-8 8 6 8-7 12 9%22/%3E%3C/g%3E%3Cg transform=%22translate(168 206) rotate(-12)%22%3E%3Crect x=%220%22 y=%220%22 width=%2234%22 height=%2244%22/%3E%3Crect x=%225%22 y=%225%22 width=%2224%22 height=%2234%22/%3E%3Ccircle cx=%2217%22 cy=%2218%22 r=%225%22/%3E%3Cpath d=%22M9 34c2-6 14-6 16 0%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");background-size:280px 280px}
+  #espejo{background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 300 300%22%3E%3Cdefs%3E%3Cg id=%22s%22%3E%3Crect x=%220%22 y=%220%22 width=%2224%22 height=%2286%22 rx=%221%22/%3E%3Crect x=%223%22 y=%223%22 width=%2218%22 height=%2218%22/%3E%3Crect x=%223%22 y=%2224%22 width=%2218%22 height=%2218%22/%3E%3Crect x=%223%22 y=%2245%22 width=%2218%22 height=%2218%22/%3E%3Crect x=%223%22 y=%2266%22 width=%2218%22 height=%2217%22/%3E%3Ccircle cx=%2212%22 cy=%2210%22 r=%223%22/%3E%3Cpath d=%22M7 21c1-4 9-4 10 0%22/%3E%3Ccircle cx=%2213%22 cy=%2231%22 r=%223%22/%3E%3Cpath d=%22M8 42c1-4 9-4 10 0%22/%3E%3Ccircle cx=%2211%22 cy=%2252%22 r=%223%22/%3E%3Cpath d=%22M6 63c1-4 9-4 10 0%22/%3E%3Ccircle cx=%2212%22 cy=%2273%22 r=%223%22/%3E%3C/g%3E%3C/defs%3E%3Cg fill=%22none%22 stroke=%22%2323262b%22 stroke-opacity=%22.085%22 stroke-width=%221.3%22 stroke-linejoin=%22round%22 stroke-linecap=%22round%22%3E%3Cuse href=%22%23s%22 transform=%22translate(30 24) rotate(-10)%22/%3E%3Cuse href=%22%23s%22 transform=%22translate(150 14) rotate(7)%22/%3E%3Cuse href=%22%23s%22 transform=%22translate(238 110) rotate(-4)%22/%3E%3Cuse href=%22%23s%22 transform=%22translate(96 140) rotate(14)%22/%3E%3Cuse href=%22%23s%22 transform=%22translate(20 190) rotate(4)%22/%3E%3Cuse href=%22%23s%22 transform=%22translate(186 196) rotate(-15)%22/%3E%3C/g%3E%3C/svg%3E");background-size:300px 300px}
+  /* Obra enmarcada */
+  .obra{display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .marco{
+    position:relative;display:inline-block;max-width:100%;
+    background:#fafafa;
+    padding:clamp(10px,2.4vw,28px);              /* passe-partout */
+    border:clamp(3px,.45vw,5px) solid var(--frame);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,.6) inset,
+      0 2px 4px rgba(0,0,0,.08),
+      0 20px 44px -18px rgba(0,0,0,.28);
+    cursor:zoom-in;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .marco::after{ /* bisel interior del passe-partout */
+    content:"";position:absolute;inset:clamp(10px,2.4vw,28px);
+    box-shadow:0 0 0 1px rgba(0,0,0,.06), inset 0 0 6px rgba(0,0,0,.12);
+    pointer-events:none;
+  }
+  .marco img{display:block;max-width:100%;height:auto}
+  .obra.cuadrada .marco img{max-height:min(74vh,720px);width:auto}
+  .obra.vertical .marco img{max-height:min(70vh,740px);width:auto}
+  .obra.apaisada .marco img{max-height:min(66vh,620px);width:auto}
+  .zoom-hint{
+    margin-top:16px;font-size:12px;color:var(--ink-soft);letter-spacing:.04em;
+    display:flex;align-items:center;gap:8px;
+  }
+  .zoom-hint svg{width:14px;height:14px;opacity:.7}
+  /* luz de galería */
+  .obra{position:relative}
+  .obra::before{
+    content:"";position:absolute;left:50%;top:-40px;transform:translateX(-50%);
+    width:min(90%,620px);height:120px;pointer-events:none;
+    background:none;
+    filter:blur(6px);z-index:-1;
+  }
+
+  /* Panel: cartela + comentario */
+  aside.panel{
+    background:rgba(250,250,250,.92);
+    border:1px solid var(--line);
+    padding:clamp(22px,3vw,34px);
+    backdrop-filter:blur(2px);
+  }
+  .cartela h2{
+    font-family:var(--serif);font-weight:400;font-style:normal;letter-spacing:-.01em;
+    font-size:clamp(26px,3.2vw,34px);line-height:1.15;margin-bottom:6px;
+  }
+  .cartela .autor{font-family:var(--sans);font-size:16px;font-weight:500;margin-bottom:14px}
+  .cartela dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13.5px;color:var(--ink-soft)}
+  .cartela dt{text-transform:uppercase;letter-spacing:.14em;font-size:10.5px;padding-top:3px;color:#8a8278}
+  .divisor{height:1px;background:var(--line);margin:24px 0}
+  .comentario h3{
+    font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--oliva);
+    font-weight:500;margin-bottom:12px;
+  }
+  .comentario .texto{font-family:var(--text);font-size:17px;line-height:1.7;color:var(--ink)}
+  .comentario .texto p+p{margin-top:.8em}
+  .comentario .texto blockquote{
+    border-left:2px solid var(--azul);padding-left:14px;margin:1em 0;font-style:italic;color:var(--ink-soft);font-family:var(--serif);font-size:17px;line-height:1.55
+  }
+  .comentario .texto strong{font-weight:600;color:var(--azul)}
+  .comentario .texto blockquote cite{display:block;margin-top:6px;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a8278}
+  .textos-serie{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+  .textos-serie h3{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--oliva);font-weight:500;margin-bottom:8px}
+  .textos-serie .nota{font-size:12.5px;color:var(--ink-soft);margin-bottom:14px}
+  .textos-serie ol{list-style:none;counter-reset:t;display:grid;gap:14px}
+  .textos-serie li{counter-increment:t;display:grid;grid-template-columns:26px 1fr;column-gap:6px}
+  .textos-serie li::before{content:counter(t);font-family:var(--serif);font-size:18px;color:var(--accent);line-height:1.35}
+  .textos-serie .en{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.4;color:var(--ink-soft)}
+  .textos-serie .es{font-family:var(--text);font-size:17px;line-height:1.5;color:var(--ink)}
+  .comentario .pendiente{color:#9a9186;font-style:italic}
+
+  /* ---------- Escritorio: panel al costado ---------- */
+  @media (min-width: 900px){
+    .sala-inner{grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);align-items:start}
+    .obra{position:sticky;top:6vh}
+    section.sala{min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+    aside.panel{max-height:88vh;overflow:auto;position:sticky;top:6vh}
+  }
+  @media (min-width: 1200px){
+    .sala-inner{grid-template-columns:minmax(0,1.7fr) minmax(340px,1fr)}
+  }
+
+  section.cierre{
+    border-top:1px solid var(--line);
+    padding:clamp(48px,9vh,96px) clamp(20px,5vw,56px);
+  }
+  .cierre-texto{
+    max-width:720px;margin:0 auto;
+    font-family:var(--text);font-size:clamp(17px,1.9vw,19px);line-height:1.75;
+  }
+  .cierre-texto p+p{margin-top:1em}
+  .cierre-texto.hipotesis{text-align:center;font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(21px,2.6vw,28px);line-height:1.5}
+  #conclusiones .cierre-texto p:first-child::first-letter{
+    float:left;font-family:var(--serif);font-weight:400;font-size:3.6em;line-height:.85;padding:6px 10px 0 0;color:var(--accent);
+  }
+  footer{
+    text-align:center;padding:48px 24px 64px;border-top:1px solid var(--line);
+    font-size:12px;color:var(--ink-soft);letter-spacing:.06em;
+  }
+  footer .firma{display:block;margin-top:18px;font-family:var(--serif);font-size:19px;letter-spacing:.02em;color:var(--ink)}
+  footer .serif{font-family:var(--serif);font-size:16px;font-style:italic;letter-spacing:0;display:block;margin-bottom:6px;color:var(--ink)}
+
+  /* ---------- Visor ampliado ---------- */
+  .visor{
+    position:fixed;inset:0;z-index:50;background:rgba(18,16,14,.96);
+    display:none;flex-direction:column;
+  }
+  .visor.abierto{display:flex}
+  .visor-top{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:calc(12px + env(safe-area-inset-top)) 16px 12px;color:#e9e3d8;font-size:13px;
+  }
+  .visor-top .t{font-family:var(--serif);font-style:italic;font-size:17px}
+  .cerrar{
+    background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:999px;
+    width:40px;height:40px;font-size:20px;line-height:1;cursor:pointer;
+  }
+  .visor-lienzo{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;display:flex;touch-action:pan-x pan-y pinch-zoom}
+  .visor-lienzo img{margin:auto;max-width:100%;max-height:100%;object-fit:contain;transition:transform .2s}
+  .visor-lienzo.ampliado img{max-width:none;max-height:none;width:auto;height:auto}
+  .visor-pie{color:#a9a194;font-size:12px;text-align:center;padding:10px 16px calc(14px + env(safe-area-inset-bottom))}
+
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hall">
+  <div class="eyebrow">UADER · FHAyCS · <span style="white-space:nowrap">Seminario en Literaturas Comparadas</span> · <span style="white-space:nowrap">Virginia Agostina Londero</span></div>
+  <h1>Representaciones corporales en tres obras artísticas: <em>Guy de Maupassant, Frida Kahlo y Duane Michals</em></h1>
+  <div class="rule"></div>
+  <ul class="index">
+    <li><a href="#hipotesis"><span>·</span>Hipótesis</a></li>
+    <li><a href="#horla"><span>I</span>Cuento</a></li>
+    <li><a href="#fridas"><span>II</span>Pintura</a></li>
+    <li><a href="#espejo"><span>III</span>Serie fotográfica</a></li>
+    <li><a href="#conclusiones"><span>·</span>Conclusiones</a></li>
+  </ul>
+</header>
+
+<main>
+  <!-- ===================== HIPÓTESIS ===================== -->
+  <section class="cierre" id="hipotesis">
+    <div class="sala-num">Hipótesis</div>
+    <div class="cierre-texto hipotesis">
+      <p>Las representaciones del doble adoptan diferentes corporalidades y significaciones en las obras artísticas seleccionadas. De esta manera, el cuerpo es un territorio en disputa y su tensión permite evidenciar conflictos de identidad.</p>
+    </div>
+  </section>
+
+  <!-- ===================== SALA I ===================== -->
+  <section class="sala" id="horla">
+    <div class="sala-num">Sala I</div>
+    <div class="sala-inner">
+      <figure class="obra vertical">
+        <div class="marco" data-src="img/el-horla-1908.jpg" data-title="“Le Horla” — Guy de Maupassant, ed. ilustrada de 1908" role="button" tabindex="0" aria-label="Ampliar portada de Le Horla, edición de 1908">
+          <img src="img/el-horla-1908.jpg" alt="Portada ilustrada de Le Horla (París, 1908): una figura fantasmal y translúcida se cierne sobre la cabeza de un hombre que se tapa la boca, angustiado" width="1037" height="1400" loading="eager">
+        </div>
+        <figcaption class="zoom-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg>
+          Tocá la obra para verla en detalle
+        </figcaption>
+      </figure>
+
+      <aside class="panel">
+        <div class="cartela">
+          <h2>“El Horla”</h2>
+          <div class="autor">Guy de Maupassant</div>
+          <dl>
+            <dt>Obra</dt><dd>Cuento fantástico (1887)</dd>
+            <dt>Origen</dt><dd>Francia · Librairie Ollendorff, París</dd>
+          </dl>
+        </div>
+        <div class="divisor"></div>
+        <div class="comentario">
+          <h3>Comentario</h3>
+          <div class="texto" id="texto-horla">
+            <p>En el cuento de Maupassant, el doble no tiene cuerpo ni forma: es una entidad invisible que se instala en el narrador y lo va despojando de su voluntad. La experiencia del otro se vive como un horror silencioso, entre la duda, la locura y la pérdida de la identidad.</p>
+            <p>“El Horla” actúa como un parásito: no se ve, pero está adentro. El narrador ya no sabe si lo que percibe es real o si está perdiendo la razón. El doble avanza por la vía de la <strong>posesión</strong> y la alienación del yo.</p>
+            <p>A diferencia de las otras obras, aquí el yo y el otro <strong>no pueden convivir</strong>. Por eso el narrador decide destruir a su doble.</p>
+            <blockquote>«Está en mí, se convierte en mi alma. ¡Lo mataré!»<cite>Maupassant, “El Horla”</cite></blockquote>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===================== SALA II ===================== -->
+  <section class="sala" id="fridas">
+    <div class="sala-num">Sala II</div>
+    <div class="sala-inner">
+      <figure class="obra cuadrada">
+        <div class="marco" data-src="img/las-dos-fridas.jpg" data-title="Las dos Fridas — Frida Kahlo, 1939" role="button" tabindex="0" aria-label="Ampliar Las dos Fridas">
+          <img src="img/las-dos-fridas.jpg" alt="Las dos Fridas, de Frida Kahlo: dos autorretratos sentados de la mano, unidos por una arteria entre sus corazones expuestos" width="1400" height="1411" loading="lazy">
+        </div>
+        <figcaption class="zoom-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg>
+          Tocá la obra para verla en detalle
+        </figcaption>
+      </figure>
+
+      <aside class="panel">
+        <div class="cartela">
+          <h2>Las dos Fridas</h2>
+          <div class="autor">Frida Kahlo</div>
+          <dl>
+            <dt>Año</dt><dd>1939</dd>
+            <dt>Técnica</dt><dd>Óleo sobre tela</dd>
+            <dt>Origen</dt><dd>México</dd>
+          </dl>
+        </div>
+        <div class="divisor"></div>
+        <div class="comentario">
+          <h3>Comentario</h3>
+          <div class="texto" id="texto-fridas">
+            <p>Kahlo pintó este doble autorretrato el año en que se divorció de Diego Rivera, en una etapa de dolor, soledad y desamor. Lo expuso en 1940 en la Exposición Internacional del Surrealismo, en México.</p>
+            <p>A la izquierda está la Frida europea, con un vestido blanco de encaje. A la derecha, la Frida mexicana, con un traje tehuano que reivindica su origen y su amor por Diego, presente en el pequeño medallón con su retrato de niño. Las dos llevan las raíces de la artista: la familia húngara del padre y la mexicana de la madre.</p>
+            <p>Están tomadas de la mano, pero el verdadero lazo es la arteria que va del corazón entero de una al corazón partido de la otra. Unas pinzas de cirujano intentan detener la sangre que se escapa.</p>
+            <p>Acá el doble no amenaza ni reemplaza: las dos Fridas <strong>coexisten y se sostienen</strong>. Son un cuerpo atravesado, abierto y herido que, aun así, se reconoce a sí mismo en la otra.</p>
+            <blockquote>«Además, están tomadas de la mano: la mano mexicana sirve de apoyo a la europea. La aparente dicotomía nacional/extranjero, traducida aquí como el “yo” y el “otro en mí”, se descose en una hermandad de sí para consigo».<cite>Fernandes, 2008, p. 41</cite></blockquote>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===================== SALA III ===================== -->
+  <section class="sala" id="espejo">
+    <div class="sala-num">Sala III</div>
+    <div class="sala-inner">
+      <figure class="obra apaisada">
+        <div class="marco" data-src="img/espejo-heisenberg.jpg" data-title="El espejo mágico de la incertidumbre del Dr. Heisenberg — Duane Michals, 1998" data-wide="1" role="button" tabindex="0" aria-label="Ampliar El espejo mágico de la incertidumbre del Dr. Heisenberg">
+          <img src="img/espejo-heisenberg.jpg" alt="Secuencia de seis fotografías en blanco y negro de Duane Michals: una joven sostiene un espejo que deforma progresivamente su reflejo" width="1194" height="647" loading="lazy">
+        </div>
+        <figcaption class="zoom-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg>
+          Tocá la obra para verla en detalle · en el celular, girá la pantalla
+        </figcaption>
+      </figure>
+
+      <aside class="panel">
+        <div class="cartela">
+          <h2>El espejo mágico de la incertidumbre del Dr. Heisenberg</h2>
+          <div class="autor">Duane Michals</div>
+          <dl>
+            <dt>Año</dt><dd>1998</dd>
+            <dt>Técnica</dt><dd>Secuencia fotográfica en blanco y negro con texto manuscrito</dd>
+            <dt>Origen</dt><dd>Estados Unidos</dd>
+          </dl>
+        </div>
+        <div class="divisor"></div>
+        <div class="comentario">
+          <h3>Comentario</h3>
+          <div class="texto" id="texto-espejo">
+            <p>Una secuencia de seis fotografías muestra a Odette frente a un espejo que deforma su reflejo. En cada imagen los ojos se estiran, los labios se agrandan y el rostro se desdibuja, hasta casi desaparecer en la última toma.</p>
+            <p>El título remite al principio de incertidumbre de Heisenberg (1927): el acto de medir un fenómeno lo altera. Del mismo modo, cuanto más intenta Odette verse, más se le escapa su imagen. La mirada que busca conocer el cuerpo es la misma que lo transforma.</p>
+            <p>Los textos manuscritos del propio Michals acompañan la serie. En ellos, Odette no se describe a sí misma: la mira y la narra otro. Siguiendo a John Berger, es una mujer mirada desde afuera. Por eso su cuerpo se vuelve un territorio en disputa entre ella, el espejo, el fotógrafo y el espectador.</p>
+            <p>Acá el doble no es otra persona. <strong>Es la propia imagen, que se vuelve ajena</strong>.</p>
+          </div>
+          <div class="textos-serie">
+            <h3>Textos de la serie</h3>
+            <p class="nota">Textos manuscritos por Duane Michals sobre la obra.</p>
+            <ol>
+              <li><span class="es">Espejo Mágico de Heisenberg de la incertidumbre</span></li>
+              <li><span class="es">Odette nunca puede saber con seguridad qué reflejo de sí misma va a ver en el espejo.</span></li>
+              <li><span class="es">El acto de mirar afecta lo que la imagen será.</span></li>
+              <li><span class="es">La incertidumbre lo permite todo y nada.</span></li>
+            </ol>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <!-- ===================== CONCLUSIONES ===================== -->
+  <section class="cierre" id="conclusiones">
+    <div class="sala-num">Conclusiones</div>
+    <div class="cierre-texto">
+      <p>Luego de realizar el trabajo comparativo de las obras artísticas seleccionadas se ha logrado conocer mejor las representaciones del doble y la corporalidad que el otro manifiesta en cada caso. Al considerar estas obras dentro de un corpus interartístico, se visibiliza que el doble puede representarse de formas muy diversas: como un ente incorpóreo y abstracto que atormenta al personaje en “El Horla”, como un autorretrato de sí misma en <em>Las dos Fridas</em> o como el reflejo cambiante de Odette en el espejo de <em>El espejo mágico de la incertidumbre del Dr. Heisenberg</em>.</p>
+      <p>Así, el análisis permitió comprobar que el tema del desdoblamiento atraviesa los siglos y los lenguajes artísticos como la literatura, la pintura y la fotografía. Solo al trabajar las obras seleccionadas en conjunto se vuelve visible que las representaciones del doble no responden a una única forma, ni a una sola representación corporal. Por el contrario, se construye de manera diferente según los recursos propios de cada lenguaje artístico: mediante las descripciones narrativas, la composición pictórica o la manipulación especular. De esta manera, la perspectiva comparada adoptada permite pensar el tema de la otredad más allá de los límites de un solo lenguaje artístico o época.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="serif">El doble y el cuerpo</span>
+  Seminario en Literaturas Comparadas · Profesorado en Lengua y Literatura
+  <span class="firma">Virginia Agostina Londero</span>
+</footer>
+
+<!-- Visor ampliado -->
+<div class="visor" id="visor" role="dialog" aria-modal="true" aria-label="Obra ampliada">
+  <div class="visor-top">
+    <span class="t" id="visor-titulo"></span>
+    <button class="cerrar" id="visor-cerrar" aria-label="Cerrar">×</button>
+  </div>
+  <div class="visor-lienzo" id="visor-lienzo">
+    <img id="visor-img" alt="">
+  </div>
+  <div class="visor-pie" id="visor-pie">Tocá dos veces para acercar · pellizcá para hacer zoom</div>
+</div>
+
+<script>
+(function(){
+  var visor=document.getElementById('visor'),
+      img=document.getElementById('visor-img'),
+      lienzo=document.getElementById('visor-lienzo'),
+      titulo=document.getElementById('visor-titulo');
+  function abrir(m){
+    img.src=m.getAttribute('data-src');
+    img.alt=m.querySelector('img').alt;
+    titulo.textContent=m.getAttribute('data-title');
+    lienzo.classList.remove('ampliado');
+    visor.classList.add('abierto');
+    document.body.style.overflow='hidden';
+    document.getElementById('visor-cerrar').focus();
+  }
+  function cerrar(){
+    visor.classList.remove('abierto');
+    document.body.style.overflow='';
+  }
+  document.querySelectorAll('.marco').forEach(function(m){
+    m.addEventListener('click',function(){abrir(m)});
+    m.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();abrir(m)}});
+  });
+  document.getElementById('visor-cerrar').addEventListener('click',cerrar);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')cerrar()});
+  // doble toque / doble clic: alterna tamaño real
+  var ultimo=0;
+  function alternar(e){
+    lienzo.classList.toggle('ampliado');
+    if(lienzo.classList.contains('ampliado')){
+      var r=img.getBoundingClientRect();
+      lienzo.scrollLeft=(img.scrollWidth-lienzo.clientWidth)/2;
+      lienzo.scrollTop=(img.scrollHeight-lienzo.clientHeight)/2;
+    }
+  }
+  img.addEventListener('dblclick',alternar);
+  img.addEventListener('touchend',function(e){
+    var ahora=Date.now();
+    if(ahora-ultimo<300){e.preventDefault();alternar();}
+    ultimo=ahora;
+  });
+})();
+</script>
+</body>
+</html>
